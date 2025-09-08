@@ -7,7 +7,7 @@ const data = require("./data.json");
 
 const app = express();
 var corsOptions = {
-  origin: "http://localhost:3002",
+  origin: ["https://schedule.samdu.uz"],
   optionsSuccessStatus: 200, // For legacy browser support
   methods: "GET",
 };
