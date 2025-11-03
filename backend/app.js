@@ -156,7 +156,7 @@ app.get("/api/groups-hemis", cors(), (request, response) => {
   axios
     .get(
       "https://student.samdu.uz/rest/v1/data/group-list?limit=150&_department=" +
-      facultyId,
+        facultyId,
       {
         headers: {
           Authorization: process.env.Authorization,
@@ -256,10 +256,15 @@ app.get("/api/schedule", (req, res) => {
     )
     .then((response) => {
       if (response.data.data.items.length !== 0) {
+        console.log(response.data.data.items);
         let week =
-          response.data.data.items[response.data.data.items.length - 1][
-          "_week"
+          response.data.data.items[0][
+            "_week"
           ];
+
+          console.log(week)
+
+          console.log("______________________________")
         res.status(200).send({
           // data: response.data,
           data: response.data.data.items.filter(
@@ -283,6 +288,4 @@ app.get("/api/schedule", (req, res) => {
     });
 });
 
-app.listen(3001, () =>
-  console.log(`app is running ${3001}`)
-);
+app.listen(3001, () => console.log(`app is running ${3001}`));

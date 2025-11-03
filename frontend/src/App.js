@@ -10,8 +10,8 @@ import Pages from "./pages/Pages";
 import Rooms from "./pages/Rooms";
 import Schedule from "./pages/Schedule";
 import { useEffect, useRef } from "react";
-// axios.defaults.baseURL = "http://localhost:3003/api";
-axios.defaults.baseURL = "https://api-schedule.samdu.uz/api/";
+axios.defaults.baseURL = "http://localhost:3003/api";
+// axios.defaults.baseURL = "https://api-schedule.samdu.uz/api/";
 
 function App() {
 

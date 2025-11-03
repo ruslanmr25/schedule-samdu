@@ -218,10 +218,8 @@ app.get("/api/schedule", (req, res) => {
     )
     .then((response) => {
       if (response.data.data.items.length !== 0) {
-        let week =
-          response.data.data.items[response.data.data.items.length - 1][
-          "_week"
-          ];
+        let week = response.data.data.items[0]["_week"];
+
         res.status(200).send({
           // data: response.data,
           data: response.data.data.items.filter(
